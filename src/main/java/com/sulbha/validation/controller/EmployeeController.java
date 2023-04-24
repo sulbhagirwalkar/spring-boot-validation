@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.validation.Valid;
 import com.sulbha.validation.dto.Employee;
 import com.sulbha.validation.service.EmployeeService;
 
@@ -17,7 +18,7 @@ public class EmployeeController {
 	private EmployeeService employeeService;
 	
 	@PostMapping
-	public Employee addNewEmployeeToSystem(@RequestBody Employee employee) {
+	public Employee addNewEmployeeToSystem( @Valid @RequestBody Employee employee) {
 		return employeeService.addNewEmployee(employee);
 	}
 	
