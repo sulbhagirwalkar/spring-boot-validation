@@ -1,6 +1,6 @@
 package com.sulbha.validation.dto;
 
-import java.util.Date;
+import com.sulbha.validation.validation.ValidateEmployeeType;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +12,9 @@ import lombok.NoArgsConstructor;
 public class Employee {
 	private long id;
 	private String firstName;
-	private String lastName;	
+	private String lastName;
+	
+	@ValidateEmployeeType
 	private String email;
 	
 
